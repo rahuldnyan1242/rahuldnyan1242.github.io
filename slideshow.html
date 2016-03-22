@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#container{ border:2px solid skyblue;
+	width: 550px;
+	height: 350px;
+	margin: 0px auto;
+	position: relative;
+}
+
+#left{ 
+	width: 70px;
+	height:500px;
+	position: absolute;
+	left: 0px;
+	top:0px;
+	text-align: center;
+}
+#right{ 
+	width: 70px;
+	height:500px;
+	position: absolute;
+	right:0px;
+	top:0px;
+	text-align: center;
+}
+#leftside,#rightside{
+	margin: 180px 0px;
+}
+
+</style>
+<script type="text/javascript">
+var imagecount = 1;
+var total = 31;
+	
+function slide(x){
+	var Image = document.getElementById('img');
+	imagecount += x;
+	if(imagecount > total){
+		imgecount = 1;
+	}
+	if(imagecount < 1){
+		imagecount = total;
+	}	
+	Image.src = "Images/img" + imagecount +".jpg";
+}
+</script>
+</head>
+<body>
+   <div id="container">
+		
+		 <img src="Images/img1.jpg" id="img"  width="550" heidht="500"/ > 
+		<div id="left"><img id="leftside" src="Images/la.png" onclick="slide(-1)"/ > </div>
+		<div id="right"> <img id="rightside" src="Images/ra.png" onclick="slide(1 )" / >  </div>
+			 
+	
+		
+   </div>
+</body>
+</html>
